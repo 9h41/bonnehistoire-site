@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.domain }}{{ canonical or page.url }}">
+  {% if noindex %}<meta name="robots" content="noindex">{% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.domain }}{{ canonical or page.url }}">
+  <meta property="og:image" content="{{ site.domain }}/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    // the home page's 1440px design is scaled to the window from 769px up, as on the previous site
+    (function () { function z() { document.documentElement.style.setProperty('--zoom', document.documentElement.clientWidth / 1440); } z(); addEventListener('resize', z); })();
+  </script>
+</head>
+<body class="{{ pageClass }}">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="canvas">
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="La bonne histoire, accueil"><img src="/assets/images/logo.png" alt="La bonne histoire" width="131" height="132"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/a-propos/">A propos</a>
+      <a href="/#avis">Avis</a>
+      <a class="nav-beta" href="/#beta">Accès Beta <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-overlay"><span>Menu</span></button>
+  </header>
+  <div class="menu-overlay" id="menu-overlay" hidden>
+    <button class="menu-close" type="button">fermer</button>
+    <a href="/a-propos/">A propos</a>
+    <a href="/#avis">Avis</a>
+    <a href="/#beta">Version Beta</a>
+  </div>
+
+  <main id="contenu">
+{{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-logo" src="/assets/images/footer-logo.png" alt="La bonne histoire" width="146" height="146" loading="lazy">
+    <div class="footer-cols">
+      <div class="footer-col footer-social">
+        <h2>Réseaux sociaux</h2>
+        <p><a href="{{ site.instagram }}" rel="noopener noreferrer" target="_blank">Instagram</a></p>
+        <p><a href="{{ site.linkedin }}" rel="noopener noreferrer" target="_blank">LinkedIn</a></p>
+        <h2>Nous contacter</h2>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div class="footer-col footer-legal">
+        <h2>Legal</h2>
+        <p><a href="/privacy-policy/">Politique de confidentialité</a></p>
+        <p><a href="/accessibility-statement/">Déclaration d'accessibilité</a></p>
+        <h2><a href="{{ site.psytours }}" rel="noreferrer" target="_blank">Santé mentale grande cause nationale</a></h2>
+        <p class="footer-boplo"><a href="{{ site.boplo }}" target="_blank" rel="noopener noreferrer">boplo</a></p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

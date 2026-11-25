@@ -1,0 +1,13 @@
+{
+  "name": "bonnehistoire-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for www.bonnehistoire.fr (11ty, GitHub Pages)",
+  "scripts": {
+    "build": "rm -rf _site && npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --port=8081"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,199 @@
+@font-face { font-family: "sora"; font-style: normal; font-weight: 100 800; src: url("/assets/fonts/sora.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "madefor-text"; font-style: normal; font-weight: 400 800; src: url("/assets/fonts/madefor-text.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "madefor-display"; font-style: normal; font-weight: 400 900; src: url("/assets/fonts/madefor-display.woff2") format("woff2"); font-display: swap; }
+
+:root {
+  --lilac: #bfc6f4;
+  --green: #e7fbbc;
+  --blue: #5368ee;
+  --ink: #000;
+  --zoom: 1;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: "madefor-text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 8px; top: 8px; z-index: 100; background: #fff; padding: 8px 12px; }
+
+/* ---- Header ---- */
+.site-header { position: fixed; top: 0; left: 0; width: 1440px; height: 167px; z-index: 50; background: #fff; transition: transform 300ms ease; }
+.logo { position: absolute; left: 56px; top: 12px; display: block; }
+.logo img { width: 131px; height: 132px; }
+.nav { position: absolute; right: 45px; top: 23px; display: flex; align-items: center; gap: 8px; }
+.nav a { display: block; padding: 10px 0 10px 19px; font-size: 15px; line-height: 21px; text-decoration: none; }
+.nav .nav-beta { display: inline-flex; align-items: center; gap: 12px; width: 169px; height: 40px; margin-left: 12px; padding: 0 0 0 29px; border: 1px solid #000; border-radius: 50px; font-family: "sora", sans-serif; font-size: 14px; }
+.nav .nav-beta svg { width: 16px; height: 16px; }
+.nav a:hover { text-decoration: underline; }
+.nav .nav-beta:hover { background: #000; color: #fff; text-decoration: none; }
+.menu-btn, .menu-overlay { display: none; }
+
+/* ---- Shared ---- */
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #000; border-radius: 300px; background: #fff; text-decoration: none; color: #000; }
+.btn-outline:hover { background: #000; color: #fff; }
+main { display: block; }
+
+/* ---- Home, desktop: the 1440px design (all offsets from the Wix site) ---- */
+.hero { position: relative; height: 1467px; }
+.hero-title { position: absolute; left: 149px; top: 295px; width: 1142px; text-align: center; white-space: nowrap; font: 700 60px/76px "madefor-display", sans-serif; }
+.hero-sub { position: absolute; left: 262px; top: 417px; width: 931px; text-align: center; font-size: 16px; line-height: 25.6px; }
+.hero-more { position: absolute; left: 638px; top: 1016px; width: 142px; height: 46px; font-size: 16px; z-index: 0; }
+.hero-pill { position: absolute; left: 129px; top: 833px; width: 448px; height: 58px; padding: 3px 92px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 18px; line-height: 28.8px; background: var(--green); border-radius: 300px; z-index: 3; transform-origin: 577px -161px; will-change: transform; }
+.phone { position: absolute; left: 533px; top: 708px; width: 350px; height: 612px; border: 10px solid #000; border-radius: 40px; overflow: hidden; background: #fff; z-index: 2; transform-origin: 50% 0; will-change: transform; }
+.phone-icon { position: absolute; left: 21px; top: 42px; width: 52px; height: 52px; z-index: 1; }
+.phone-girl { position: absolute; left: 0; top: 0; width: 330px; height: 362px; object-fit: cover; }
+.phone-card { position: absolute; left: 0; top: 320px; width: 330px; height: 272px; background: #fff; border-radius: 30px; }
+.phone-hello { position: absolute; left: 37px; top: 109px; font: 700 32px/38.4px "sora", sans-serif; }
+.phone-btn { position: absolute; left: 34px; top: 179px; width: 137px; height: 58px; padding: 0 26px; text-align: center; font-size: 18px; line-height: 28.8px; }
+
+.intro { position: relative; height: 1198px; }
+.intro-label { display: none; }
+.intro-text { position: absolute; left: 215px; top: 16px; width: 994px; font: 400 27px/35.1px "sora", sans-serif; }
+.intro-title { position: absolute; left: 215px; top: 165px; width: 667px; font: 700 63px/75.6px "sora", sans-serif; }
+.card { position: absolute; width: 296px; height: 428px; background: var(--lilac); border-radius: 33.75px; }
+.card h3 { position: absolute; left: 22px; font: 400 27px/35.1px "sora", sans-serif; }
+.card p { position: absolute; left: 22px; width: 252px; font: 400 16px/25.6px "sora", sans-serif; }
+.card-1 { left: 259px; top: 617px; } .card-1 h3 { top: 212px; } .card-1 p { top: 263px; }
+.card-2-wrap { position: absolute; left: 606px; top: 440px; width: 296px; height: 698px; }
+.card-2 { position: sticky; left: auto; top: 200px; } .card-2 h3 { top: 271px; } .card-2 p { top: 321px; }
+.card-3 { left: 967px; top: 617px; } .card-3 h3 { top: 245px; } .card-3 p { top: 295px; }
+
+.reviews { position: sticky; top: 0; z-index: 1; height: 822px; background: var(--green); }
+.reviews-pill { position: absolute; left: 284px; top: 97px; width: 336px; height: 53px; display: flex; align-items: center; justify-content: center; background: var(--lilac); border-radius: 300px; font: 400 16px/25.6px "sora", sans-serif; z-index: 1; }
+.reviews-card { position: absolute; left: 182px; top: 126px; width: 1076px; height: 440px; background: #fff; border-radius: 30px; }
+.review { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 400ms ease; }
+.review.is-active { opacity: 1; visibility: visible; }
+.review { display: flex; flex-direction: column; align-items: center; padding-top: 41px; }
+.review blockquote { width: 821px; text-align: center; font: 700 48px/57.6px "sora", sans-serif; }
+.review[data-w="792"] blockquote { width: 792px; }
+.review figcaption { margin-top: 31px; text-align: center; font: 400 16px/25.6px "sora", sans-serif; }
+.reviews-nav { position: absolute; left: 643px; top: 627px; display: flex; gap: 10px; }
+.reviews-nav button { width: 75px; height: 75px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.reviews-nav button::before { content: ""; position: absolute; width: 60px; height: 60px; border-radius: 16px; background: #000; }
+.reviews-nav button svg { position: relative; width: 24px; height: 24px; }
+.reviews-nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.heart-wrap { position: sticky; top: 0; z-index: 2; height: 564px; pointer-events: none; }
+.heart { position: absolute; left: 623px; top: 182px; width: 200px; height: 200px; }
+
+.beta { position: relative; z-index: 3; height: 563px; background: var(--green); }
+.beta-card { position: absolute; left: 423px; top: 129px; width: 594px; height: 305px; background: rgba(231, 251, 188, 0.41); border-radius: 42px; box-shadow: 2.998px 0.105px 9px 3px rgba(191, 198, 244, 0.92); }
+.beta-card h2 { position: absolute; left: 81px; top: 50px; font: 400 24px/36px "sora", sans-serif; }
+.beta-card label { position: absolute; left: 81px; top: 119px; font: 400 14px/19.6px "sora", sans-serif; }
+.beta-card input { position: absolute; left: 81px; top: 146px; width: 420px; height: 40px; padding: 0 12px; border: 0; border-radius: 6px; background: #fff; font: 400 16px "sora", sans-serif; }
+.beta-card button { position: absolute; left: 81px; top: 216px; width: 432px; height: 41px; border: 0; border-radius: 100px; background: var(--blue); color: #fff; font: 400 16px "sora", sans-serif; cursor: pointer; }
+.beta-card button:hover { background: #3f55d8; }
+.beta-ok { position: absolute; left: 81px; top: 266px; width: 432px; font: 400 12px/16px "sora", sans-serif; }
+.beta-ok[hidden] { display: none; }
+
+.download { position: relative; z-index: 3; height: 270px; text-align: center; background: #fff; }
+.download h2 { position: absolute; left: 383px; top: 60px; width: 738px; font: 700 50.625px/65.8px "sora", sans-serif; }
+.download p { position: absolute; left: 0; top: 138px; width: 1440px; font: 400 20px/28px "sora", sans-serif; }
+
+.site-footer { position: relative; z-index: 3; height: 400px; background: var(--lilac); color: #fff; font-family: "sora", sans-serif; }
+.site-footer a { color: #fff; text-decoration: underline; }
+.footer-logo { position: absolute; left: 43px; top: 83px; width: 146px; height: 146px; }
+.footer-col { position: absolute; top: 62px; }
+.footer-social { left: 251px; }
+.footer-legal { left: 639px; }
+.site-footer h2 { font: 400 20px/28px "sora", sans-serif; }
+.site-footer p { font: 400 16px/25.6px "sora", sans-serif; }
+.footer-social h2 + p { margin-top: 5px; }
+.footer-social h2:nth-of-type(2) { margin-top: 12px; }
+.footer-legal h2:nth-of-type(2) { margin-top: 38px; }
+.footer-legal p { margin-left: -11px; }
+.footer-legal h2 + p { margin-top: 5px; }
+.footer-boplo { margin-top: 24px; }
+
+/* the 1440px design scales to the window from 769px up */
+@media (min-width: 769px) {
+  .canvas { width: 1440px; zoom: var(--zoom); }
+}
+
+/* ---- Phones: the 390px design ---- */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 100px; }
+  .canvas { width: auto; }
+  .site-header { width: 100%; height: 150px; }
+  .logo { left: 50%; margin-left: -65px; top: 17px; }
+  .nav { display: none; }
+  .menu-btn { display: block; position: absolute; right: 18px; top: 18px; width: 44px; height: 32px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .menu-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .menu-btn::before, .menu-btn::after { content: ""; position: absolute; right: 4px; height: 2px; background: #000; border-radius: 1px; }
+  .menu-btn::before { top: 9px; width: 30px; }
+  .menu-btn::after { top: 17px; width: 20px; }
+  .menu-overlay { position: fixed; inset: 0; z-index: 70; flex-direction: column; align-items: center; justify-content: center; gap: 26px; background: var(--green); font: 400 24px "sora", sans-serif; }
+  .menu-overlay:not([hidden]) { display: flex; }
+  .menu-overlay a { text-decoration: none; }
+  .menu-close { position: absolute; right: 18px; top: 20px; padding: 8px 14px; border: 1px solid #000; border-radius: 50px; background: #fff; font: 400 14px "sora", sans-serif; cursor: pointer; }
+
+  .hero { height: 922px; }
+  .hero-title { left: 55px; top: 181px; width: 280px; white-space: normal; letter-spacing: -0.4px; font-size: 22.788px; line-height: 29px; }
+  .hero-sub { left: 68px; top: 269px; width: 252px; }
+  .hero-more { left: 114px; top: 378px; z-index: 1; }
+  .hero-pill { display: none; }
+  .phone { left: 68px; top: 460px; width: 240px; height: 420px; border-width: 8px; border-radius: 30px; }
+  .phone-girl { width: 224px; height: 241px; }
+  .phone-card { top: 219px; width: 224px; height: 188px; border-radius: 22px; }
+  .phone-hello { left: 22px; top: 65px; width: 190px; font-size: 24px; line-height: 28.8px; }
+  .phone-btn { left: 20px; top: 135px; width: 137px; height: 46px; padding: 0 20px; font-size: 12px; line-height: 19.2px; }
+
+  .intro { height: 1019px; }
+  .intro-label { display: flex; align-items: center; justify-content: center; position: absolute; left: 28px; top: 29px; width: 193px; height: 50px; border-radius: 300px; background: var(--green); font-size: 16px; line-height: 25.6px; }
+  .intro-text { left: 25px; top: 115px; width: 309px; font-size: 16px; line-height: 20.8px; }
+  .intro-title { left: 20px; top: 242px; width: 318px; font-size: 30px; line-height: 36px; }
+  .card { width: 314px; }
+  .card h3 { left: 17px; font-size: 24px; line-height: 31.2px; }
+  .card p { left: 17px; width: 280px; }
+  .card-2-wrap { display: contents; }
+  .card-2 { position: absolute; }
+  .card-3 { left: 33px; top: 318px; height: 219px; } .card-3 h3 { left: 13px; top: 41px; } .card-3 p { left: 13px; top: 91px; width: 290px; }
+  .card-1 { left: 34px; top: 559px; height: 185px; } .card-1 h3 { top: 42px; } .card-1 p { top: 92px; }
+  .card-2 { left: 33px; top: 771px; height: 185px; width: 320px; } .card-2 h3 { left: 16px; top: 38px; } .card-2 p { left: 16px; top: 88px; }
+
+  .reviews { height: 822px; }
+  .reviews-pill { left: 57px; top: 100px; width: 277px; height: 40px; font-size: 14px; line-height: 22.4px; }
+  .reviews-card { left: 20px; top: 126px; width: 350px; height: 440px; border-radius: 20px; }
+  .review { padding-top: 47px; }
+  .review blockquote { width: 308px; font-size: 30px; line-height: 36px; }
+  .review[data-w="792"] blockquote { width: 290px; }
+  .review figcaption { margin-top: 35px; width: 247px; }
+  .reviews-nav { left: 50%; margin-left: -80px; top: 600px; }
+  .heart-wrap { display: none; }
+
+  .beta { height: 445px; }
+  .beta-card { left: 20px; top: 45px; width: 342px; height: 335px; }
+  .beta-card h2 { left: 81px; top: 49px; width: 180px; }
+  .beta-card label { left: 81px; top: 149px; }
+  .beta-card input { left: 81px; top: 176px; width: 180px; }
+  .beta-card button { left: 81px; top: 246px; width: 180px; }
+  .beta-ok { left: 40px; top: 296px; width: 262px; }
+
+  .download { height: 225px; }
+  .download h2 { left: 59px; top: 41px; width: 272px; font-size: 36px; line-height: 46.8px; }
+  .download p { width: 390px; top: 137px; }
+
+  .site-footer { height: 765px; }
+  .footer-logo { left: 50%; margin-left: -102px; top: 47px; width: 205px; height: 205px; }
+  .footer-col { left: 72px; width: 300px; }
+  .footer-social { top: 283px; }
+  .footer-legal { top: 456px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .review { transition: none; }
+}
+
+/* ---- Text pages (A propos, legal) ---- */
+.page-text .site-header { position: absolute; }
+.text-page { max-width: 1100px; margin: 0 auto; padding: 200px 40px 120px; font-family: "sora", sans-serif; }
+.text-page h1 { font: 700 44px/1.2 "madefor-display", sans-serif; margin-bottom: 32px; }
+.text-page h2 { font: 700 26px/1.3 "madefor-display", sans-serif; margin: 40px 0 12px; }
+.text-page h3 { font: 600 20px/1.4 "sora", sans-serif; margin: 28px 0 10px; }
+.text-page p, .text-page li { font-size: 16px; line-height: 1.7; }
+.text-page p { margin: 0 0 18px; }
+.text-page ul, .text-page ol { margin: 0 0 18px; padding-left: 26px; }
+@media (min-width: 769px) { .page-text .canvas { width: 1440px; } }

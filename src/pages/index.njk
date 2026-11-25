@@ -1,0 +1,61 @@
+---
+layout: base.njk
+title: "La bonne histoire : écrire ensemble"
+description: "La bonne histoire est une application d’écriture collaborative conçue pour créer du lien, simplement, entre grands-parents et petits-enfants, Une expérience à plusieurs, tour après tour, qui transforme quelques minutes sur un téléphone en souvenir commun."
+permalink: /
+pageClass: page-home
+---
+<section class="hero" id="hero">
+  <h1 class="hero-title">Intergénérationnel. Collaboratif. Créatif</h1>
+  <p class="hero-sub">Avec la bonne histoire, le numérique rapproche enfin grands-parents et petits-enfants.</p>
+  <a class="btn-outline hero-more" href="/a-propos/">En savoir +</a>
+  <p class="hero-pill">Quand technologie et créativité ressèrent les liens</p>
+  <div class="phone" aria-hidden="false">
+    <img class="phone-girl" src="/assets/images/girl.png" alt="Une illustration représentant un enfant" width="330" height="362">
+    <svg class="phone-icon" viewBox="0 0 52 52" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="#000"/><circle cx="39" cy="12" r="11" fill="none" stroke="#000" stroke-width="1.5"/><circle cx="12" cy="39" r="11" fill="none" stroke="#000" stroke-width="1.5"/><rect x="28" y="28" width="22" height="22" rx="4" fill="#000"/></svg>
+    <div class="phone-card">
+      <p class="phone-hello">Bonjour !</p>
+      <a class="btn-outline phone-btn" href="/#beta">Créer une histoire</a>
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="intro">
+  <p class="intro-label">Introduction</p>
+  <p class="intro-text">L'outil conçu pour les retraités dynamiques qui veulent rester en lien avec leurs petits-enfants au travers du monde merveilleux des histoires collaboratives ✨</p>
+  <h2 class="intro-title">Lancement prochain</h2>
+  <div class="cards">
+    <article class="card card-1"><h3>Collaboratif</h3><p>Invitez vos proches, à continuer une histoire ensemble.</p></article>
+    <div class="card-2-wrap"><article class="card card-2"><h3>Créatif</h3><p>L'outil t'impose des contraintes et de la nait la créativité !</p></article></div>
+    <article class="card card-3"><h3>Familial</h3><p>Très pratique quand les tatas, tontons, grands-parents sont éloignés: tout le monde garde le contact !</p></article>
+  </div>
+</section>
+
+<section class="reviews" id="avis" aria-roledescription="carrousel" aria-label="Avis">
+  <p class="reviews-pill">Ce que les gens en disent</p>
+  <div class="reviews-card">
+    <figure class="review is-active" data-w="821"><blockquote>"Mon petit-fils écrit des histoires avec moi tous les jours, cela nous permet d'échanger grâce aux histoires et surtout de partager des bons moments"</blockquote><figcaption>Colette, 72 ans, jeune mamie</figcaption></figure>
+    <figure class="review" data-w="792"><blockquote>"J'ai écrit une histoire avec mon meilleur copain, le titre était: j'ai mangé avec Luffy à la cantine”</blockquote><figcaption>Clément, collégien de presque 12 ans</figcaption></figure>
+  </div>
+  <div class="reviews-nav">
+    <button type="button" class="rev-prev" aria-label="Avis précédent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m0 0 6-6m-6 6 6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="rev-next" aria-label="Avis suivant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</section>
+
+<div class="heart-wrap" aria-hidden="true"><img class="heart" src="/assets/images/heart.png" alt="" width="200" height="200" loading="lazy"></div>
+
+<section class="beta" id="beta">
+  <form class="beta-card" action="mailto:contact@bonnehistoire.fr" method="post" enctype="text/plain" data-beta>
+    <h2>Version Beta disponible</h2>
+    <label for="beta-email">Saisissez votre e-mail<span aria-hidden="true">*</span></label>
+    <input id="beta-email" name="email" type="email" required autocomplete="email">
+    <button type="submit">Envoyer</button>
+    <p class="beta-ok" role="status" hidden>Merci ! Votre messagerie s'ouvre pour finaliser votre demande d'accès à la bêta.</p>
+  </form>
+</section>
+
+<section class="download" id="telecharger">
+  <h2>Télécharge la bonne histoire</h2>
+  <p>Bientôt</p>
+</section>

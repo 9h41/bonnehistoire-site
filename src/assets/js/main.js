@@ -29,6 +29,7 @@
 
   // hero: the phone and its label grow while scrolling (values measured on the previous site)
   const phone = document.querySelector('.phone'), pill = document.querySelector('.hero-pill');
+  const introFirst = () => [...document.querySelectorAll('.intro > *')].find((el) => el.offsetParent) || document.querySelector('.intro');
   if (phone && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const narrow = matchMedia('(max-width: 768px)');
     const zoom = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--zoom')) || 1;
@@ -36,7 +37,12 @@
     const update = () => {
       raf = 0;
       const y = narrow.matches ? scrollY : scrollY / zoom();
-      const s = narrow.matches ? 1 + Math.min(y, 800) * 0.000473 : 1 + Math.min(Math.max(0, y - 300), 1100) * 0.000414;
+      let s = narrow.matches ? 1 + Math.min(y, 800) * 0.000473 : 1 + Math.min(Math.max(0, y - 300), 1100) * 0.000414;
+      // never let the grown phone reach the text of the next section (keep a 40px gap, in design px)
+      const r = phone.getBoundingClientRect(), cur = parseFloat((phone.style.transform.match(/scale\(([\d.]+)/) || [0, 1])[1]);
+      const unit = r.width / cur / (narrow.matches ? 240 : 350);
+      const room = introFirst().getBoundingClientRect().top - r.top - 40 * unit;
+      s = Math.max(1, Math.min(s, room / (r.height / cur)));
       const t = s > 1.0005 ? 'scale(' + s.toFixed(4) + ')' : '';
       phone.style.transform = t; if (pill) pill.style.transform = t;
     };

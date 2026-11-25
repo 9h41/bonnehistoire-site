@@ -37,7 +37,7 @@ h1, h2, h3, p, figure, blockquote { margin: 0; }
 main { display: block; }
 
 /* ---- Home, desktop: the 1440px design (all offsets from the Wix site) ---- */
-.hero { position: relative; height: 1467px; }
+.hero { position: relative; height: 1597px; }
 .hero-title { position: absolute; left: 149px; top: 295px; width: 1142px; text-align: center; white-space: nowrap; font: 700 60px/76px "madefor-display", sans-serif; }
 .hero-sub { position: absolute; left: 262px; top: 417px; width: 931px; text-align: center; font-size: 16px; line-height: 25.6px; }
 .hero-more { position: absolute; left: 638px; top: 1016px; width: 142px; height: 46px; font-size: 16px; z-index: 0; }
@@ -134,7 +134,7 @@ main { display: block; }
   .menu-overlay a { text-decoration: none; }
   .menu-close { position: absolute; right: 18px; top: 20px; padding: 8px 14px; border: 1px solid #000; border-radius: 50px; background: #fff; font: 400 14px "sora", sans-serif; cursor: pointer; }
 
-  .hero { height: 922px; }
+  .hero { height: 1042px; }
   .hero-title { left: 55px; top: 181px; width: 280px; white-space: normal; letter-spacing: -0.4px; font-size: 22.788px; line-height: 29px; }
   .hero-sub { left: 68px; top: 269px; width: 252px; }
   .hero-more { left: 114px; top: 378px; z-index: 1; }

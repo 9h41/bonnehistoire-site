@@ -46,12 +46,14 @@ pageClass: page-home
 <div class="heart-wrap" aria-hidden="true"><img class="heart" src="/assets/images/heart.png" alt="" width="200" height="200" loading="lazy"></div>
 
 <section class="beta" id="beta">
-  <form class="beta-card" action="mailto:contact@bonnehistoire.fr" method="post" enctype="text/plain" data-beta>
+  <form class="beta-card" action="https://newsletter.bonnehistoire.fr/subscribe" method="post" data-beta novalidate>
     <h2>Version Beta disponible</h2>
     <label for="beta-email">Saisissez votre e-mail<span aria-hidden="true">*</span></label>
     <input id="beta-email" name="email" type="email" required autocomplete="email">
+    <label class="beta-consent"><input type="checkbox" name="consent" required><span>J'accepte de recevoir les informations sur la version bêta et les nouvelles de La bonne histoire (désinscription à tout moment, voir la <a href="/privacy-policy/#newsletter">politique de confidentialité</a>).</span></label>
+    <input class="beta-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button type="submit">Envoyer</button>
-    <p class="beta-ok" role="status" hidden>Merci ! Votre messagerie s'ouvre pour finaliser votre demande d'accès à la bêta.</p>
+    <p class="beta-msg" role="status" aria-live="polite"></p>
   </form>
 </section>
 

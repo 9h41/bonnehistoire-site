@@ -1,0 +1,12 @@
+{
+  "name": "bonnehistoire-newsletter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "cf deploy"
+  },
+  "devDependencies": {
+    "cf": "latest",
+    "wrangler": "^4.168.0"
+  }
+}

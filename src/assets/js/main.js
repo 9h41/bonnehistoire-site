@@ -45,13 +45,26 @@
     update();
   }
 
-  // beta sign-up: composes the e-mail in the visitor's mail app (no server here)
+  // beta / newsletter sign-up: posted to the relay (worker/), which asks Brevo for a double opt-in e-mail
   const form = document.querySelector('[data-beta]');
-  if (form) form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = form.querySelector('input[type=email]').value.trim();
-    if (!email) return;
-    location.href = 'mailto:contact@bonnehistoire.fr?subject=' + encodeURIComponent('Accès à la version bêta') + '&body=' + encodeURIComponent('Bonjour, je souhaite accéder à la version bêta de La bonne histoire. Mon e-mail : ' + email);
-    form.querySelector('.beta-ok').hidden = false;
-  });
+  if (form) {
+    const msg = form.querySelector('.beta-msg'), btn = form.querySelector('button');
+    const say = (text, ok) => { msg.textContent = text; msg.classList.toggle('is-error', !ok); };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim(), consent = form.consent.checked;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return say('Merci de saisir une adresse e-mail valide.', false), form.email.focus();
+      if (!consent) return say('Merci de cocher la case pour accepter de recevoir nos informations.', false);
+      btn.disabled = true; say('Envoi…', true);
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, consent, website: form.website.value }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error(data.error || res.status);
+        form.reset();
+        say('Merci ! Un e-mail de confirmation vient de vous être envoyé : cliquez sur le lien qu\'il contient pour finaliser votre inscription.', true);
+      } catch {
+        say('Une erreur est survenue. Réessayez plus tard ou écrivez-nous à contact@bonnehistoire.fr.', false);
+      } finally { btn.disabled = false; }
+    });
+  }
 })();

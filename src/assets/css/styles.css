@@ -80,14 +80,18 @@ main { display: block; }
 .heart { position: absolute; left: 623px; top: 182px; width: 200px; height: 200px; }
 
 .beta { position: relative; z-index: 3; height: 563px; background: var(--green); }
-.beta-card { position: absolute; left: 423px; top: 129px; width: 594px; height: 305px; background: rgba(231, 251, 188, 0.41); border-radius: 42px; box-shadow: 2.998px 0.105px 9px 3px rgba(191, 198, 244, 0.92); }
+.beta-card { position: absolute; left: 423px; top: 114px; width: 594px; height: 335px; background: rgba(231, 251, 188, 0.41); border-radius: 42px; box-shadow: 2.998px 0.105px 9px 3px rgba(191, 198, 244, 0.92); }
 .beta-card h2 { position: absolute; left: 81px; top: 50px; font: 400 24px/36px "sora", sans-serif; }
 .beta-card label { position: absolute; left: 81px; top: 119px; font: 400 14px/19.6px "sora", sans-serif; }
 .beta-card input { position: absolute; left: 81px; top: 146px; width: 420px; height: 40px; padding: 0 12px; border: 0; border-radius: 6px; background: #fff; font: 400 16px "sora", sans-serif; }
-.beta-card button { position: absolute; left: 81px; top: 216px; width: 432px; height: 41px; border: 0; border-radius: 100px; background: var(--blue); color: #fff; font: 400 16px "sora", sans-serif; cursor: pointer; }
+.beta-card .beta-consent { position: absolute; left: 81px; top: 194px; width: 432px; display: flex; gap: 8px; align-items: flex-start; font: 400 11px/14px "sora", sans-serif; }
+.beta-card .beta-consent input { position: static; flex: none; padding: 0; margin: 1px 0 0; width: 14px; height: 14px; accent-color: var(--blue); }
+.beta-card .beta-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; padding: 0; opacity: 0; }
+.beta-card button:disabled { opacity: .6; cursor: wait; }
+.beta-card button { position: absolute; left: 81px; top: 246px; width: 432px; height: 41px; border: 0; border-radius: 100px; background: var(--blue); color: #fff; font: 400 16px "sora", sans-serif; cursor: pointer; }
 .beta-card button:hover { background: #3f55d8; }
-.beta-ok { position: absolute; left: 81px; top: 266px; width: 432px; font: 400 12px/16px "sora", sans-serif; }
-.beta-ok[hidden] { display: none; }
+.beta-msg { position: absolute; left: 81px; top: 294px; width: 432px; margin: 0; font: 400 12px/16px "sora", sans-serif; }
+.beta-msg.is-error { color: #b3261e; }
 
 .download { position: relative; z-index: 3; height: 270px; text-align: center; background: #fff; }
 .download h2 { position: absolute; left: 383px; top: 60px; width: 738px; font: 700 50.625px/65.8px "sora", sans-serif; }
@@ -165,12 +169,15 @@ main { display: block; }
   .heart-wrap { display: none; }
 
   .beta { height: 445px; }
-  .beta-card { left: 20px; top: 45px; width: 342px; height: 335px; }
-  .beta-card h2 { left: 81px; top: 49px; width: 180px; }
-  .beta-card label { left: 81px; top: 149px; }
-  .beta-card input { left: 81px; top: 176px; width: 180px; }
-  .beta-card button { left: 81px; top: 246px; width: 180px; }
-  .beta-ok { left: 40px; top: 296px; width: 262px; }
+  .beta { height: 520px; }
+  .beta-card { left: 20px; top: 45px; width: 342px; height: auto; min-height: 335px; padding: 40px 36px 28px; }
+  .beta-card h2, .beta-card label, .beta-card input, .beta-card button, .beta-msg, .beta-consent { position: static; width: 100%; }
+  .beta-card h2 { margin: 0 0 24px; }
+  .beta-card label { display: block; margin: 0 0 8px; }
+  .beta-card input[type=email] { display: block; margin: 0 0 14px; }
+  .beta-card .beta-consent { position: static; display: flex; width: 100%; margin: 0 0 16px; }
+  .beta-card button { display: block; }
+  .beta-msg { margin-top: 12px; }
 
   .download { height: 225px; }
   .download h2 { left: 59px; top: 41px; width: 272px; font-size: 36px; line-height: 46.8px; }

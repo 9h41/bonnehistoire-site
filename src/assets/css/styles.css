@@ -103,7 +103,7 @@ main { display: block; }
 .site-footer p { font: 400 16px/25.6px "sora", sans-serif; }
 .footer-social h2 + p { margin-top: 5px; }
 .footer-social h2:nth-of-type(2) { margin-top: 12px; }
-.footer-legal h2:nth-of-type(2) { margin-top: 38px; }
+.footer-legal h2:nth-of-type(2) { margin-top: 13px; }
 .footer-legal p { margin-left: -11px; }
 .footer-legal h2 + p { margin-top: 5px; }
 .footer-boplo { margin-top: 24px; }

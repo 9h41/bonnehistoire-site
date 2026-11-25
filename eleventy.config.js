@@ -1,4 +1,6 @@
 module.exports = function (eleventyConfig) {
+  // repo-only notes must never be published
+  eleventyConfig.ignores.add("**/AGENTS.md");
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
   eleventyConfig.addCollection("sitemapPages", (api) =>

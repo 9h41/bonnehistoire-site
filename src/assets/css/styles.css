@@ -1,5 +1,6 @@
 @font-face { font-family: "sora"; font-style: normal; font-weight: 100 800; src: url("/assets/fonts/sora.woff2") format("woff2"); font-display: swap; }
 @font-face { font-family: "madefor-text"; font-style: normal; font-weight: 400 800; src: url("/assets/fonts/madefor-text.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "fraunces"; font-style: normal; font-weight: 300; src: url("/assets/fonts/fraunces.woff2") format("woff2"); font-display: swap; }
 @font-face { font-family: "madefor-display"; font-style: normal; font-weight: 400 900; src: url("/assets/fonts/madefor-display.woff2") format("woff2"); font-display: swap; }
 
 :root {
@@ -197,3 +198,49 @@ main { display: block; }
 .text-page p { margin: 0 0 18px; }
 .text-page ul, .text-page ol { margin: 0 0 18px; padding-left: 26px; }
 @media (min-width: 769px) { .page-text .canvas { width: 1440px; } }
+
+/* ---- A propos: green and white bands (offsets from the previous site, 1440px design) ---- */
+.page-about .site-header { position: fixed; }
+.about { padding-top: 167px; font-family: "sora", sans-serif; }
+.ab { position: relative; }
+.ab p, .ab h1, .ab h2 { position: absolute; margin: 0; font-size: 16px; line-height: 25.6px; font-weight: 400; }
+.ab-1 { height: 352px; background: var(--green); }
+.ab-1 h1 { left: 186px; top: 38px; font-size: 24px; line-height: 32px; }
+.ab-1 .ab-p1 { left: 232px; top: 113px; width: 909px; } .ab-1 .ab-p2 { left: 232px; top: 164px; width: 909px; } .ab-1 .ab-p3 { left: 232px; top: 241px; width: 909px; }
+.ab-2 { height: 250px; background: #fff; }
+.ab-2 h2 { left: 45px; top: 85px; width: 270px; font: 300 42px/52px "fraunces", Georgia, serif; }
+.ab-2 .ab-p1 { left: 591px; top: 45px; width: 749px; } .ab-2 .ab-p2 { left: 589px; top: 122px; width: 748px; }
+.ab-3 { height: 987px; background: var(--green); }
+.ab-3 .ab-p1 { left: 175px; top: 61px; width: 945px; } .ab-3 .ab-p2 { left: 175px; top: 263px; width: 945px; }
+.ab-photo { position: absolute; left: 46px; top: 515px; width: 378px; height: 426px; object-fit: cover; border-radius: 189px 189px 0 0; }
+.ab-3 .ab-side { left: 536px; top: 619px; width: 720px; font-size: 20px; line-height: 58px; }
+.ab-4 { height: 498px; background: #fff; }
+.ab-4 .ab-p1 { left: 169px; top: 73px; width: 971px; } .ab-4 h2 { left: 319px; top: 221px; font: 400 16px/25.6px "sora", sans-serif; }
+.ab-4 .ab-p2 { left: 169px; top: 289px; width: 947px; } .ab-4 .ab-p3 { left: 169px; top: 366px; width: 947px; }
+@media (max-width: 768px) {
+  .about { padding-top: 150px; }
+  .ab { height: auto !important; padding: 36px 24px 40px; }
+  .ab p, .ab h1, .ab h2 { position: static; width: auto !important; margin: 0 0 20px; }
+  .ab-1 h1 { font-size: 24px; }
+  .ab-2 h2 { font-size: 34px; line-height: 42px; margin-bottom: 24px; }
+  .ab-photo { position: static; display: block; width: 100%; max-width: 300px; height: auto; aspect-ratio: 378 / 426; margin: 8px auto 28px; }
+  .ab-3 .ab-side { font-size: 18px; line-height: 34px; }
+  .ab-4 h2 { font-size: 24px; line-height: 32px; margin: 8px 0 18px; }
+}
+
+/* legal pages: typography and column measured on the previous site */
+.text-page.legal { max-width: none; width: 1086px; margin: 0 0 0 40px; padding: 240px 0 100px; }
+.text-page.legal h1 { font: 700 20px/24px "sora", sans-serif; margin: 0 0 61px; }
+.text-page.legal h2 { font: 700 14px/22.4px "sora", sans-serif; margin: 23px 0 0; }
+.text-page.legal p, .text-page.legal li { font-size: 14px; line-height: 22.4px; }
+.text-page.legal p { margin: 0; }
+.text-page.legal ul, .text-page.legal ol { margin: 0; padding-left: 25px; }
+.text-page.a11y { max-width: none; width: 803px; margin: 0 0 0 216px; padding: 240px 0 100px; }
+.text-page.a11y h1 { font: 700 16px/25.6px "sora", sans-serif; margin: 0 0 22px; }
+.text-page.a11y h2 { font: 700 16px/25.6px "sora", sans-serif; margin: 20px 0 0; }
+.text-page.a11y p { margin: 0 0 25px; }
+.text-page.a11y h2 + p { margin-top: 0; }
+.text-page.a11y ul { margin: 0 0 25px; padding-left: 29px; }
+@media (max-width: 768px) {
+  .text-page.legal, .text-page.a11y { width: auto; margin: 0; padding: 190px 24px 60px; }
+}

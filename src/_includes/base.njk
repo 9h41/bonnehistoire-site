@@ -54,15 +54,16 @@
         <p><a href="{{ site.instagram }}" rel="noopener noreferrer" target="_blank">Instagram</a></p>
         <p><a href="{{ site.linkedin }}" rel="noopener noreferrer" target="_blank">LinkedIn</a></p>
         <h2>Nous contacter</h2>
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p><a class="footer-email" href="mailto:{{ site.email }}">{{ site.email | replace("@", "<wbr>@") | safe }}</a></p>
       </div>
       <div class="footer-col footer-legal">
-        <h2>Legal</h2>
+        <h2>Légal</h2>
         <p><a href="/privacy-policy/">Politique de confidentialité</a></p>
         <p><a href="/accessibility-statement/">Déclaration d'accessibilité</a></p>
         <p><a href="/terms-and-conditions/">Conditions générales d'utilisation</a></p>
-        <h2><a href="{{ site.psytours }}" rel="noreferrer" target="_blank">Santé mentale grande cause nationale</a></h2>
-        <p class="footer-boplo"><a href="{{ site.boplo }}" target="_blank" rel="noopener noreferrer">boplo</a></p>
+        <h2>À voir aussi</h2>
+        <p><a href="{{ site.psytours }}" rel="noreferrer" target="_blank">Santé mentale grande cause nationale</a></p>
+        <p><a href="{{ site.boplo }}" target="_blank" rel="noopener noreferrer">boplo</a></p>
       </div>
     </div>
   </footer>

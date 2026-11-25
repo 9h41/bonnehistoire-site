@@ -97,20 +97,15 @@ main { display: block; }
 .download h2 { position: absolute; left: 383px; top: 60px; width: 738px; font: 700 50.625px/65.8px "sora", sans-serif; }
 .download p { position: absolute; left: 0; top: 138px; width: 1440px; font: 400 20px/28px "sora", sans-serif; }
 
-.site-footer { position: relative; z-index: 3; height: 400px; background: var(--lilac); color: #fff; font-family: "sora", sans-serif; }
-.site-footer a { color: #fff; text-decoration: underline; }
-.footer-logo { position: absolute; left: 43px; top: 83px; width: 146px; height: 146px; }
-.footer-col { position: absolute; top: 62px; }
-.footer-social { left: 251px; }
-.footer-legal { left: 639px; }
-.site-footer h2 { font: 400 20px/28px "sora", sans-serif; }
-.site-footer p { font: 400 16px/25.6px "sora", sans-serif; }
-.footer-social h2 + p { margin-top: 5px; }
-.footer-social h2:nth-of-type(2) { margin-top: 12px; }
-.footer-legal h2:nth-of-type(2) { margin-top: 13px; }
-.footer-legal p { margin-left: -11px; }
-.footer-legal h2 + p { margin-top: 5px; }
-.footer-boplo { margin-top: 24px; }
+.site-footer { position: relative; z-index: 3; display: flex; align-items: flex-start; justify-content: center; gap: 80px; padding: 64px 43px 72px; background: var(--lilac); color: #fff; font-family: "sora", sans-serif; }
+.site-footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.site-footer a:hover { text-decoration-thickness: 2px; }
+.footer-logo { flex: none; width: 146px; height: 146px; margin-top: 4px; }
+.footer-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 320px)); column-gap: 72px; }
+.footer-col { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.site-footer h2 { margin: 0 0 4px; font: 400 20px/28px "sora", sans-serif; }
+.site-footer h2 ~ h2 { margin-top: 20px; }
+.site-footer p { margin: 0; font: 400 16px/24px "sora", sans-serif; }
 
 /* the 1440px design scales to the window from 769px up */
 @media (min-width: 769px) {
@@ -183,11 +178,12 @@ main { display: block; }
   .download h2 { left: 59px; top: 41px; width: 272px; font-size: 36px; line-height: 46.8px; }
   .download p { width: 390px; top: 137px; }
 
-  .site-footer { height: 765px; }
-  .footer-logo { left: 50%; margin-left: -102px; top: 47px; width: 205px; height: 205px; }
-  .footer-col { left: 72px; width: 300px; }
-  .footer-social { top: 283px; }
-  .footer-legal { top: 456px; }
+  .site-footer { flex-direction: column; align-items: center; gap: 36px; padding: 47px 20px 56px; }
+  .footer-logo { width: 160px; height: 160px; margin: 0; }
+  .footer-cols { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+  .footer-email { overflow-wrap: anywhere; }
+  .site-footer h2 { font-size: 17px; line-height: 24px; }
+  .site-footer p { font-size: 14px; line-height: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
